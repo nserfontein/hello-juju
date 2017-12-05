@@ -12,14 +12,14 @@ memory=2048
 disk_size=20
 
 virt-install \
---name $vm_name \
---vcpus $vcpus \
---cpu host-passthrough \
---memory $memory \
---cdrom "$iso_image" \
---disk path=${pool_path}/${vm_name}.img,format=qcow2,size=$disk_size,bus=virtio,cache=writeback \
---network network='maas',model=virtio \
---noautoconsole
+    --name $vm_name \
+    --vcpus $vcpus \
+    --cpu host-passthrough \
+    --memory $memory \
+    --cdrom "$iso_image" \
+    --disk path=${pool_path}/${vm_name}.img,format=qcow2,size=$disk_size,bus=virtio,cache=writeback \
+    --network network='maas',model=virtio \
+    --noautoconsole
 ```
 
 # Install Ubuntu for Juju
