@@ -24,21 +24,22 @@ virt-install \
 
 # Install Ubuntu for Juju
 - Select "Install Ubuntu Server"
-- IP Address: DHCP or 192.168.100.192
+- Intercept DHCP lookup
+- IP Address: 192.168.100.99
 - Hostname: juju
 - User: Team, team, team
 - Add Open SSH Server
 
 # Configure MAAS Controller (on juju)
 ```bash
-ssh team@192.168.100.192
+ssh team@192.168.100.99
 sudo -i
 apt-get update -y 
 apt install -y juju
 ```
 
 # Connect Juju and MAAS
-**Get MAAS API Key**
+**Get MAAS API Key (on maasctl)**
 ```bash
 ssh team@192.168.100.2
 sudo -i
@@ -46,9 +47,9 @@ maas-region apikey --username=team
 # copy apikey
 ```
 
-**Configure MAAS Cloud**
+**Configure MAAS Cloud (on juju)**
 ```bash
-ssh team@192.168.100.192
+ssh team@192.168.100.99
 sudo -i
 mkdir ~/.juju
 cd
@@ -67,32 +68,6 @@ juju clouds
 juju add-credential maas-cloud
 # Enter credential name: maas-cloud-creds
 # Enter maas-auth: <paste from 'Get MAAS API Key'>
-```
-
-# Useful Commands
-**Cloud**
-```bash
-juju clouds
-juju show-cloud maas-cloud
-```
-
-**Controller**
-```bash
-juju bootstrap maas-cloud maas-controller
-juju bootstrap --bootstrap-series=trusty maas-cloud maas-controller
-juju bootstrap --bootstrap-series=xenial maas-cloud maas-controller
-juju bootstrap --config default-series=centos7 maas-cloud maas-controller
-juju bootstrap --bootstrap-series=centos7 --config bootstrap-timeout=900 maas-cloud maas-controller
-juju controllers
-juju destroy-controller maas-controller --destroy-all-models
-juju switch maas-controller
-```
-
-**Machine**
-```bash
-juju machines
-juju add-machine
-juju remove-machine 4
 ```
 
 # Resources
