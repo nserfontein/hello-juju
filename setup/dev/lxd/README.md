@@ -17,6 +17,7 @@ juju bootstrap $LXD_CLOUD $CONTROLLER_NAME
 juju whoami
 juju controllers
 juju models
+juju status
 ```
 
 **Cleanup**
@@ -27,10 +28,6 @@ juju destroy-controller lxd-test
 juju destroy-model default
 juju add-model default
 ```
-
-
-
-
 
 # Resources
 https://jujucharms.com/docs/stable/tut-lxd
