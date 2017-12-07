@@ -25,14 +25,14 @@ virt-install \
 # Install Ubuntu for Juju
 - Select "Install Ubuntu Server"
 - Intercept DHCP lookup
-- IP Address: 192.168.100.99
+- IP Address: 192.168.123.99
 - Hostname: juju
 - User: Team, team, team
 - Add Open SSH Server
 
 # Configure MAAS Controller (on juju)
 ```bash
-ssh team@192.168.100.99
+ssh team@192.168.123.99
 sudo -i
 apt-get update -y 
 apt install -y juju
@@ -41,7 +41,7 @@ apt install -y juju
 # Connect Juju and MAAS
 **Get MAAS API Key (on maasctl)**
 ```bash
-ssh team@192.168.100.2
+ssh team@192.168.123.2
 sudo -i
 maas-region apikey --username=team
 # copy apikey
@@ -49,7 +49,7 @@ maas-region apikey --username=team
 
 **Configure MAAS Cloud (on juju)**
 ```bash
-ssh team@192.168.100.99
+ssh team@192.168.123.99
 sudo -i
 mkdir ~/.juju
 cd
@@ -58,7 +58,7 @@ clouds:
     maas-cloud:
         type: maas
         auth-types: [oauth1]
-        endpoint: http://192.168.100.2/MAAS
+        endpoint: http://192.168.123.2/MAAS
 EOF
 
 # confirm:

@@ -20,13 +20,22 @@ juju models
 juju status
 ```
 
+# Deploy applications
+```bash
+juju deploy cs:bundle/wiki-simple
+watch juju status
+```
+
 **Cleanup**
 ```bash
-juju destroy-controller lxd-test
-
 # Reset model
+juju models
 juju destroy-model default
 juju add-model default
+
+# !!!! DESTROY controller and models
+juju  controllers
+juju destroy-controller lxd-test --destroy-all-models -y
 ```
 
 # Resources
