@@ -6,3 +6,6 @@ juju add-machine ssh:ubuntu@192.168.1.129
 juju status
 juju deploy wordpress --to 0
 ```
+
+# Resources
+https://jujucharms.com/docs/stable/clouds-manual

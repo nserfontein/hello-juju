@@ -71,4 +71,5 @@ juju add-credential maas-cloud
 ```
 
 # Resources
+https://jujucharms.com/docs/stable/clouds-maas
 https://github.com/lenovo/workload-solution/wiki/Build-Juju-&-MAAS-on-KVM

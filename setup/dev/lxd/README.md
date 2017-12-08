@@ -9,3 +9,4 @@ sudo snap install juju --classic
 
 # Resources
 https://jujucharms.com/docs/stable/tut-lxd
+https://jujucharms.com/docs/stable/clouds-LXD
