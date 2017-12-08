@@ -41,5 +41,8 @@ juju add-model default
 
 # !!!! DESTROY controller and models
 juju  controllers
-juju destroy-controller lxd-test --destroy-all-models -y
+juju destroy-controller --destroy-all-models -y name
 ```
+
+# Resources
+https://jujucharms.com/docs/stable/tut-lxd

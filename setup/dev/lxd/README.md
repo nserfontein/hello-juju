@@ -8,7 +8,7 @@ sudo snap list juju
 sudo snap refresh juju
 ```
 
-# Install Juju (Alternative)
+# Install Juju (APT Alternative)
 ```bash
 sudo add-apt-repository --update ppa:juju/stable
 sudo apt install juju
@@ -21,5 +21,4 @@ If you subsequently add/change firewall settings (e.g. with ufw), ensure that su
 Juju requires inbound traffic for TCP port 8443 from the LXD subnet.
 
 # Resources
-https://jujucharms.com/docs/stable/tut-lxd
-https://jujucharms.com/docs/stable/clouds-LXD
+https://jujucharms.com/docs/stable/reference-install
