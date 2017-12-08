@@ -4,6 +4,14 @@
 # Install Juju
 ```bash
 sudo snap install juju --classic
+sudo snap list juju
+sudo snap refresh juju
+```
+
+# Install Juju (Alternative)
+```bash
+sudo add-apt-repository --update ppa:juju/stable
+sudo apt install juju
 ```
 
 # Notes
