@@ -9,6 +9,7 @@ Also, Juju orchestrates provisioning by tracking its available resources (such a
 # Useful commands
 ```bash
 juju clouds
+juju gui
 ```
 
 # Create a controller
