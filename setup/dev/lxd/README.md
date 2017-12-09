@@ -8,12 +8,6 @@ sudo snap list juju
 sudo snap refresh juju
 ```
 
-# Install Juju (APT Alternative)
-```bash
-sudo add-apt-repository --update ppa:juju/stable
-sudo apt install juju
-```
-
 # Notes
 ### Firewall
 LXD adds iptables (firewall) rules to allow traffic to the subnet/bridge it created. 
